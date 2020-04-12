@@ -12,6 +12,9 @@
 -Xms|初始堆大小|默认是物理内存的1/64
 -Xmx|最大堆大小|默认是物理内存的1/4 堆最大初始设置相同,fullgc重新申请内存
 -Xmn|新生代大小|
+-XX:+UseCompressedOops|压缩指针
+-XX:MetaspaceSize|元空间
+-XX:MaxMetaspaceSize|元空间
 
 *OOM*
 ~~~
@@ -23,4 +26,11 @@ jmap -dump:format=b,file=dump.hprof pid
 System.gc
 老年代空间不足
 通过Minor GC后进入老年代的平均大小大于老年代的可用内存
+~~~
+
+~~~
+串行收集器/并行收集器/并发标记清除
+内存占用及并发开销最小化/应用吞吐量最大化/应用GC暂停时间最小化
+
+
 ~~~

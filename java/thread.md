@@ -39,3 +39,18 @@ volatile
  * 可见性。对一个 volatile 变量的读,总是能看到(任意线程)对这个 volatile变量最后的写入
  * 原子性:对任意单个 volatile 变量的读/写具有原子性,但类似于 volatile++这种复合操作不具有原子性
 ```
+~~~
+public enum State {
+      NEW,
+
+      RUNNABLE,
+
+      BLOCKED,
+
+      WAITING,
+
+      TIMED_WAITING,
+
+      TERMINATED;
+  }
+~~~

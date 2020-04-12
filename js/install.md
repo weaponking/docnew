@@ -1,3 +1,7 @@
+~~~
 sudo apt-get install npm
 
-npm install vue
+sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+sudo cnpm install --global vue-cli
+~~~

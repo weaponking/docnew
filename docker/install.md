@@ -33,15 +33,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ~~~
 
-*redis :*
-~~~
-sudo docker run --name redis-test -p 6380:6379  -d redis --requirepass "123456"
-
-sudo docker start -i redis-test
-
-sudo docker exec -it redis-test redis-cli
-~~~
-
 *zookeeper kafka :*
 ~~~
 sudo docker pull wurstmeister/kafka
