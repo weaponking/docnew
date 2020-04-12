@@ -1,3 +1,4 @@
+~~~
 import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -11,7 +12,7 @@ public class OptionalCase {
 
 	private User user;
 	private User user1;
-	
+
 	@Before
 	public void init() {
 		log.info(" init ---------- ");
@@ -21,14 +22,14 @@ public class OptionalCase {
 			.build();
 		user1 = User.builder().id(2).name("king").build();
 	}
-	
+
 	@Test
 	public void test() {
 		Optional<User> op = Optional.of(user1);
 		Optional<User.Address> opa =  Optional.ofNullable(op.get().getAddress());
 		assertFalse(opa.isPresent());
 	}
-	
+
 	@Test
 	public void test1() {
 		User u = Optional.ofNullable(user).orElse(builderUser());
@@ -41,7 +42,7 @@ public class OptionalCase {
 		 * orElse 有无都会创建默认值
 		 */
 	}
-	
+
 	private User builderUser() {
 		log.info("create user");
 		return User.builder().build();
@@ -57,23 +58,24 @@ import lombok.Data;
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private int id;
 	private String name;
 	private Address address;
 	private Country country;
-	
+
 	@Data
 	@Builder
 	public static class Country {
 		private String city;
 	}
-	
+
 	@Data
 	@Builder
 	public static class Address {
 		private String street;
 	}
-	
-	
+
+
 }
+~~~

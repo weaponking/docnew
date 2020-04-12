@@ -1,3 +1,4 @@
+~~~
 SimpleDateFormat 所有的格式化和解析都需要通过一个中间对象Calendar进行转换
 
 Instant——它代表的是时间戳
@@ -22,3 +23,4 @@ public static void main(String[] args) {
     LocalDateTime localDateTime1 = LocalDateTime.of(2016, 2, 1, 12, 10);
     System.out.println(formatTime(localDateTime1, "yyyy-MM-dd"));
 }
+~~~

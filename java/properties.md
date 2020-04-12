@@ -1,3 +1,4 @@
+~~~
 import static org.junit.Assert.assertEquals;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -45,3 +46,4 @@ public class TestCase {
 		System.out.println(Properties.class.getClassLoader()==null);
 	}
 }
+~~~

@@ -1,3 +1,4 @@
+~~~
 <dependency>
 	<groupId>org.apache.httpcomponents</groupId>
 	<artifactId>httpclient</artifactId>
@@ -22,3 +23,4 @@ try {
 } catch (IOException e) {
 	e.printStackTrace();
 }
+~~~

@@ -1,3 +1,4 @@
+~~~
 arrayList {1,2,3,4,5,6,7,8}
 
 Collections.rotate(arrayList, 4);
@@ -26,3 +27,4 @@ Collections.sort(arrayList, new Comparator<Integer>() {
 					 for (; r < size; r++)
 							 if (c.contains(elementData[r]) == complement)
 									 elementData[w++] = elementData[r];
+~~~

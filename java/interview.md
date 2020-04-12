@@ -1,3 +1,4 @@
+~~~
 1.字符串常量池：
 java字符串不可变,为了减少创建字符串的数量,创建字符串时先从常量池检索,找到返回引用.找不到实例化一个返回
 Integer 缓存返回127 -》 -128之间的int
@@ -100,3 +101,4 @@ HTTP 1.1支持长连接（PersistentConnection）和请求的流水线（Pipelin
 HTTP 1.1新增缓存处理策略
 30.redis
 master server 先dump出内存快照文件，然后将rdb文件传给slave server，slave server 根据rdb文件重建内存表
+~~~

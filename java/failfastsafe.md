@@ -1,3 +1,4 @@
+~~~
 java.util包下面的所有的集合类都是快速失败的
 java.util.concurrent包下面的所有的类都是安全失败的
 
@@ -56,3 +57,4 @@ final void checkForComodification() {
         throw new ConcurrentModificationException();
 }
 add()、remove()，clear()，只要涉及到修改集合中的元素个数时，都会改变modCount的值
+~~~
