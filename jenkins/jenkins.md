@@ -14,8 +14,8 @@ cat /etc/services | grep 8080
 sudo vi /etc/default/jenkins
 sudo vi /etc/init.d/jenkins
 
-ln -s /opt/jdk1.8.0_201/bin /usr/bin/java
-sudo update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_201/bin/java 1
+ln -s /opt/jdk1.8.0_221/bin /usr/bin/java
+sudo update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_221/bin/java
 sudo update-alternatives --config java
 
 password:
@@ -25,4 +25,6 @@ password:
 sudo vi /etc/default/jenkins
 JENKINS_USER=root
 JENKINS_GROUP=root
+
+3.Failed to start LSB: Start Jenkins at boot time.
 ~~~
