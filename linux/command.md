@@ -3,4 +3,5 @@
  free -mh
  top
 
+sudo netstat -ap|grep 8080 
 ~~~

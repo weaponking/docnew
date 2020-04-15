@@ -27,4 +27,6 @@ JENKINS_USER=root
 JENKINS_GROUP=root
 
 3.Failed to start LSB: Start Jenkins at boot time.
+
+sudo apt-get purge --auto-remove jenkins
 ~~~
