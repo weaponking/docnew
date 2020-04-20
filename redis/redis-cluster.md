@@ -9,7 +9,7 @@ sudo docker network inspect redis-network
 
 sudo docker network inspect redis-network |grep "Gateway"
 
-sudo mkdir -p /docker/redis/{6379,6380,6381}
+sudo mkdir -p /home/weapon/docker1/redis/{6379,6380,6381}
 
 sudo passwd root
 
@@ -32,10 +32,10 @@ sudo docker start -i redis-6380
 sudo docker start -i redis-6381
 
 sudo docker exec -it redis-6381 redis-cli
-SLAVEOF 172.17.0.2 6379
+slaveof 172.20.0.2 6379
 
 sudo docker exec -it redis-6380 redis-cli
-SLAVEOF 172.17.0.2 6379
+slaveof 172.20.0.2 6379
 
 info replication
 ~~~
@@ -60,8 +60,6 @@ port 6380
 
 appendonly no
 
-slaveof 172.20.0.2 6379
-
 masterauth 123456
 
 requirepass 123456
@@ -79,7 +77,43 @@ sudo docker exec -it redis-6380 redis-cli -p 6380
 
 *哨兵*
 ~~~
+#当前用户目录下创建文件夹
+mkdir -p /home/当前用户/docker/redis/sentinel
 
+#/docker/redis/sentinel文件夹下创建redis-sentinel.1/2/3.conf 内容如下
+
+#redis-sentinel.1.conf
+port 26379
+sentinel monitor mymaster 172.20.0.2 6379 1
+sentinel down-after-milliseconds mymaster 30000
+sentinel failover-timeout mymaster 60000
+sentinel auth-pass mymaster 123456
+
+#redis-sentinel.2.conf
+port 26380
+sentinel monitor mymaster 172.20.0.2 6379 1
+sentinel down-after-milliseconds mymaster 30000
+sentinel failover-timeout mymaster 60000
+sentinel auth-pass mymaster 123456
+
+#redis-sentinel.3.conf
+port 26381
+sentinel monitor mymaster 172.20.0.2 6379 1
+sentinel down-after-milliseconds mymaster 30000
+sentinel failover-timeout mymaster 60000
+sentinel auth-pass mymaster 123456
+
+#启动容器
+sudo docker run --net=redis-network --name redis-26379 -v /home/weapon/docker/redis/sentinel/redis-sentinel.1.conf:/etc/redis/sentinel.conf -d redis redis-sentinel /etc/redis/sentinel.conf
+
+sudo docker run --net=redis-network --name redis-26380 -v /home/weapon/docker/redis/sentinel/redis-sentinel.2.conf:/etc/redis/sentinel.conf -d redis redis-sentinel /etc/redis/sentinel.conf
+
+sudo docker run --net=redis-network --name redis-26381 -v /home/weapon/docker/redis/sentinel/redis-sentinel.3.conf:/etc/redis/sentinel.conf -d redis redis-sentinel /etc/redis/sentinel.conf
+
+sudo docker exec -it redis-26379 redis-cli -p 26379
+
+sudo docker stop redis-26379 redis-26380 redis-26381
+sudo docker rm redis-26379 redis-26380 redis-26381
 ~~~
 
 *集群*

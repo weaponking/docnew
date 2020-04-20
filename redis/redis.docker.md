@@ -1,5 +1,6 @@
 *redis :*
 ~~~
+sudo docker pull redis:latest
 sudo docker run --name redis-test -p 6380:6379  -d redis --requirepass "123456"
 
 sudo docker start -i redis-test
