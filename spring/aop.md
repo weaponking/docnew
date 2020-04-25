@@ -7,3 +7,23 @@ implements InvocationHandler
 proxy-target-class="true"使用CGLIB动态代理
 implements MethodInterceptor
 ~~~
+
+~~~
+<bean id="settersAndAbsquatulatePointcut"
+        class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+    <property name="patterns">
+        <list>
+            <value>.*set.*</value>
+            <value>.*absquatulate</value>
+        </list>
+    </property>
+</bean>
+
+org.springframework.aop.framework.ProxyFactoryBean
+
+org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator
+
+<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
+
+~~~
