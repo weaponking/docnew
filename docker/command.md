@@ -38,4 +38,8 @@ sudo docker container port busybox
 /var/lib/docker/volumes
 
 sudo docker-compose up
+
+sudo docker port container
+
+
 ~~~

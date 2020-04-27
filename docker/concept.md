@@ -7,6 +7,12 @@ Linux Namespaces
 
 Linux Container(lxc) -> docker -> rep -> image
 
+ovs : openvswitch
+
+sdn: software driver Network
+
+COW 写时复制
+
 工具:
 
 machine swarm compose
