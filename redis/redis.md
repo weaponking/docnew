@@ -103,4 +103,52 @@ mget key key1 (获取所有(一个或多个)给定 key 的值)
 setnx key value (只有在 key 不存在时设置 key 的值)
 
 append key val (如果 key 已经存在并且是一个字符串， APPEND 命令将指定的 value 追加到该 key 原来值（value）的末尾)
+
+incr key 递增
+
+decr key 递减
+
+incrby key setp
+
+decrby key setp
 ```
+*list command*
+~~~
+lpush key 1 2 3 4 5 //取反
+lrange 0 -1
+rpush key 1 2 3 4 5 //怎么进怎么出
+lpop key//正序
+rpop key//反序
+llen key
+lrem key count value
+ltrim key start stop
+rpoplpush list1 list2 //list1 末尾加到 list2头上
+linsert list01 before/after val1 val2
+~~~
+*set command*
+~~~
+sadd key val val1
+smembers s1
+sismember s1 val
+scard s1
+srandmember key count
+spop key
+smove key1 key2 val
+sdiff 差集 在第一个里不在第二里
+sinter 交集
+sunion 并集
+~~~
+*hash command*
+~~~
+hset key
+hget
+hmset
+hmget
+hgetall
+hdel
+hlen
+hexists
+hkeys
+hvals
+hsetnx
+~~~

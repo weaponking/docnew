@@ -60,6 +60,8 @@ port 6380
 
 appendonly no
 
+slaveof 172.20.0.2 6379
+
 masterauth 123456
 
 requirepass 123456
