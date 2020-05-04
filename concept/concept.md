@@ -15,3 +15,8 @@ RBAC
  冗余 keepalived
  自动故障转移
 ~~~
+
+~~~
+QPS Queries Per Second 每秒查询率 QPS = req/sec = 请求数/秒
+TPS Transactions Per Second 每秒处理的事务数目
+~~~

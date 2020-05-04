@@ -41,5 +41,5 @@ sudo docker-compose up
 
 sudo docker port container
 
-
+sudo docker build .
 ~~~
