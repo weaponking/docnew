@@ -1,3 +1,4 @@
+*Least Recently Used \ random \ nerver*
 ~~~
 volatile-lru:从设置了过期时间的数据集中，选择最近最久未使用的数据释放；
 allkeys-lru:从数据集中(包括设置过期时间以及未设置过期时间的数据集中)，选择最近最久未使用的数据释放；
