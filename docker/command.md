@@ -42,4 +42,6 @@ sudo docker-compose up
 sudo docker port container
 
 sudo docker build .
+
+sudo docker rm $(sudo docker ps -a -q) 
 ~~~

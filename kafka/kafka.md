@@ -46,7 +46,7 @@ AR=ISR+OSR
 
 Kafka在启动的时候会开启两个与ISR相关的定时任务，名称分别为“isr-expiration"和”isr-change-propagation"。
 
-/brokers/topics//partition//state
+/brokers/topics/partition/state
 ~~~
 
 ~~~

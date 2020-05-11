@@ -1,0 +1,16 @@
+version: '2.2'
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.6.2
+    restart: always
+    container_name: logstash
+    volumes:
+      - "/home/weapon/docker/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml"
+      - "/home/weapon/docker/logstash/config/:/usr/share/logstash/conf.d/"
+      - "/home/weapon/tmp/logs/:/tmp/logs/"
+    networks:
+      - elastic
+networks:
+  elastic:
+    external:
+      name: single_elastic
