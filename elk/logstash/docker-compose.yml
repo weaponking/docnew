@@ -6,7 +6,7 @@ services:
     container_name: logstash
     volumes:
       - "/home/weapon/docker/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml"
-      - "/home/weapon/docker/logstash/config/:/usr/share/logstash/conf.d/"
+      - "/home/weapon/docker/logstash/config/file.conf:/usr/share/logstash/conf.d/file.conf"
       - "/home/weapon/tmp/logs/:/tmp/logs/"
     networks:
       - elastic

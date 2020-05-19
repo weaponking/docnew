@@ -5,10 +5,8 @@ sudo docker run -p 9200:9200 -p 9300:9300 --name es01 docker.elastic.co/elastics
 
 *sudo vi /etc/security/limits.conf*
 ~~~
-* soft   nofile   65536
-*  hard   nofile   65536
-*  soft   nproc    4096
-* hard   nproc    4096
+* -  nofile   65536
+* -  noproc   65536
 *  soft   core     unlimited
 *  soft   hard     unlimited
 weapon soft   nofile   65536
@@ -18,6 +16,7 @@ weapon hard   nproc    4096
 weapon soft   core     unlimited
 weapon soft   hard     unlimited
 
+ulimit -SHn 65536
 ~~~
 
 *sudo vi /etc/sysctl.conf*
@@ -74,5 +73,5 @@ sudo docker run -d -p 5044:5044 --name logstash --net=elk_elastic -v /home/weapo
 
 ~~~
 sudo docker pull docker.elastic.co/kibana/kibana:7.6.2
-sudo docker run --link 2d89b249e3f0:elasticsearch --net=elk_elastic -p 5601:5601 --name kibana docker.elastic.co/kibana/kibana:7.6.2
+sudo docker run --link es01:elasticsearch --net=single_elastic -p 5601:5601 --name kibana docker.elastic.co/kibana/kibana:7.6.2
 ~~~
