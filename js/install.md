@@ -3,9 +3,15 @@ sudo apt-get install npm
 
 sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-sudo cnpm install --global vue-cli
+npm config set registry http://registry.npm.taobao.org/
 
-vue init webpack my-project
+npm get registry
+
+npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
+sudo cnpm install -g @vue-cli
+
+vue init webpack admin-pro
 
 sudo cnpm i element-ui -S
 
@@ -41,3 +47,21 @@ sudo vue add element
 
 sudo npm install axios
 ~~~
+
+~~~
+sudo cnpm install -g @vue/cli
+
+sudo cnpm install -g @vue/cli-init
+
+~~~
+export PATH=.:${IDEA_JDK_64}:$PATH
+
+export NODE_HOME=/opt/node-v12.17.0-linux-x64
+
+export PATH=$PATH:.:${NODE_HOME}/bin:$PATH
+
+export NODE_PATH=$NODE_HOME/lib/node_modules
+
+sudo ln -s /opt/node-v12.17.0-linux-x64/bin/node  /usr/bin/node
+sudo ln -s /opt/node-v12.17.0-linux-x64/lib/node  /usr/lib/node
+sudo ln -s /opt/node-v12.17.0-linux-x64/bin/npm  /usr/bin/npm

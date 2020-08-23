@@ -42,3 +42,10 @@ observer
 第一次 myid最大 Leader
 第二次 zxid最大 Leader
 ~~~
+
+~~~
+request -> nginx -> redis -> cache service -> service
+mq -> pub/sub
+
+
+~~~

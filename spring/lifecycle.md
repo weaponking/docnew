@@ -1,0 +1,6 @@
+~~~
+BeanNameAware
+BeanPostProcessors
+InitializingBean
+DisposableBean
+~~~
