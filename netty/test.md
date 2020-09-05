@@ -32,3 +32,6 @@ service-->tcpserver: send command?
 tcpserver-->>service : message?
 app-->car:?
 ```
+~~~
+获取tcp长连server既是netty又是dubbo又是wcontroller?
+~~~
