@@ -49,3 +49,18 @@ mq -> pub/sub
 
 
 ~~~
+
+Map<String, List<ClientLine>> groupClient = list.stream().collect(Collectors.groupingBy(ClientLine::getClientId));
+
+        ArrayList<ClientLine> clientLines = new ArrayList<>();
+        AtomicInteger index = new AtomicInteger();
+
+        groupClient.forEach((clientId, item) -> {
+            List<ClientLine> sortedItems = item.stream()
+                .sorted(Comparator.comparingLong(ClientLine::getSortTime))
+                    .collect(Collectors.toList());
+            System.out.println("" + JSON.toJSONString(sortedItems));
+            System.out.println(JSON.toJSONString(sortedItems.get(sortedItems.size()-1)));
+            clientLines.add(sortedItems.get(sortedItems.size()-1));
+            System.out.println(index.incrementAndGet());
+        });
